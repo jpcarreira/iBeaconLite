@@ -9,7 +9,9 @@
 #import "JCDetectViewController.h"
 #import "JCBeaconMonitoringService.h"
 
-static NSString *uuidString = @"43D58CBC-9EFF-4E63-A5E5-ED8EEE7F1B41";
+//static NSString *uuidString = @"43D58CBC-9EFF-4E63-A5E5-ED8EEE7F1B41";
+static NSString *uuidString = @"45DDDA98-2F19-11E3-89D9-F23C91AEC05E";
+
 
 @interface JCDetectViewController ()<CLLocationManagerDelegate>
 
@@ -49,7 +51,7 @@ static NSString *uuidString = @"43D58CBC-9EFF-4E63-A5E5-ED8EEE7F1B41";
     _locationManager.delegate = self;
     
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:uuidString];
-    [_monitoringService startMonitoringBeaconWithUUID:uuid major:0 minor:0 identifier:@"com.jpcarreira.ibeacon" onEntry:YES onExit:YES];
+    [_monitoringService startMonitoringBeaconWithUUID:uuid major:0 minor:1 identifier:@"com.jpcarreira.ibeacon" onEntry:YES onExit:YES];
     
     _beaconRegion = [_monitoringService getBeaconRegion];
     
